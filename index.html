@@ -19,6 +19,9 @@
   body { margin: 0; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--fg); background: var(--bg); }
   main { max-width: 40rem; margin: 0 auto; padding: 4rem 1.25rem 2rem; }
   img { width: 9rem; height: auto; display: block; }
+  /* Same trick as the app's ReviosLogo: the wordmark is drawn in dark ink, so
+     turn it white on a dark background instead of shipping a second file. */
+  @media (prefers-color-scheme: dark) { img { filter: brightness(0) invert(1); } }
   h1 { font-size: 2rem; line-height: 1.2; margin: 2rem 0 1rem; letter-spacing: -0.01em; }
   p { margin: 0 0 1rem; color: var(--muted); }
   a { color: var(--accent); }
